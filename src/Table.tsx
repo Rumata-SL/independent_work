@@ -14,6 +14,7 @@ export const Table: FC<TablePropsType> = ({count, inc, reset}) => {
     let min = 0;
     return (
         <div className={"table"}>
+
             <Input count={count}/>
             <div className={"containerBtn"}>
                 <Button title={"inc"} callback={inc} isDisabled={count === 5}/>

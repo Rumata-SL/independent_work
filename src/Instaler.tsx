@@ -4,23 +4,41 @@ import {Button} from "./Button";
 import "./App.css";
 
 type InstalerPropsType = {
+    numberMax: number
+    numberMin: number
     instaler: () => void
-    changeMaxValue: (e: string) => void
-    changeMinValue: (e: string) => void
+    changeMaxValue: (e: number) => void
+    changeMinValue: (e: number) => void
 }
 
-export const Instaler: FC<InstalerPropsType> = ({instaler, changeMaxValue,changeMinValue}) => {
+export const Instaler: FC<InstalerPropsType> = (
+    {
+                    instaler,
+                    changeMaxValue,
+                    changeMinValue,
+                    numberMax,
+                    numberMin
+                                                }
+                                                ) => {
 
-    const onchangeMaxHandler = (e: ChangeEvent<HTMLInputElement>)=>{
-        changeMaxValue((e.currentTarget.value))
+    function onchangeMaxHandler(e: ChangeEvent<HTMLInputElement>) {
+        let counterMaxNumber = +e.currentTarget.value
+        changeMaxValue(counterMaxNumber)
     }
-    const onchangeMinHandler = (e: ChangeEvent<HTMLInputElement>)=>{
-        console.log(typeof (e.currentTarget.value))
-        changeMinValue(e.currentTarget.value)
+
+    function onchangeMinHandler(e: ChangeEvent<HTMLInputElement>) {
+        let counterMinNumber = +e.currentTarget.value;
+        console.log(typeof counterMinNumber)
+        changeMinValue(counterMinNumber)
     }
 
     return (
         <div className={"table"}>
+            {
+                numberMin > numberMax ? <h5 style={{color: "red"}}>error</h5> : null
+            }
+
+            {/*<h5 style={{color:"red"}}>error</h5>*/}
             <span style={{color: "#fff"}}> max value <input
                 onChange={onchangeMaxHandler}
                 type="number"/>

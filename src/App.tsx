@@ -5,21 +5,21 @@ import {Instaler} from "./Instaler";
 
 function App() {
 
-    let [numberMax, setNumberMax] = useState("0")
-    let [numberMin, setNumberMin] = useState("0")
-    let [count, setCount] = useState(0);
+    let [numberMax, setNumberMax] = useState(0)
+    let [numberMin, setNumberMin] = useState(0)
+    let [count, setCount] = useState(numberMin);
 
     console.log(numberMax)
     console.log(numberMin)
-    const changeMaxValue = (e: string) => {
+    const changeMaxValue = (e: number) => {
         setNumberMax(e)
     }
-    const changeMinValue = (e: string) => {
+    const changeMinValue = (e: number) => {
         setNumberMin(e)
     }
 
     const instaler = ()=>{
-
+        setCount(numberMin)
     }
 
     const inc = () => {
@@ -38,6 +38,8 @@ function App() {
                 instaler={instaler}
                 changeMaxValue={changeMaxValue}
                 changeMinValue={changeMinValue}
+                numberMax={numberMax}
+                numberMin={numberMin}
 
             />
 
