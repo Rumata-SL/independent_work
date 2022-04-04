@@ -38,19 +38,22 @@ export const Instaler: FC<InstalerPropsType> = (
                 {/*}*/}
 
                 <span> max value : <input
-                    className={numberMax < 0 ? "errorInput" : ""}
+                    className={numberMax < 0 || numberMax === numberMin? "errorInput"  : ""}
                     onChange={onchangeMaxHandler}
                     type="number"/>
             </span>
                 <span> min value : <input
-                    className={numberMin < 0 ? "errorInput" : ""}
+                    className={numberMin < 0  || numberMax === numberMin ? "errorInput" : ""}
                     onChange={onchangeMinHandler}
                     type="number"/>
             </span>
             </div>
 
             <div className={"containerBtn"}>
-                <Button title={"SET"} callback={instaler} isDisabled={numberMin < 0 || numberMax < numberMin}/>
+                <Button
+                    title={"SET"}
+                    callback={instaler}
+                    isDisabled={numberMin < 0 || numberMax < numberMin || numberMax === numberMin }/>
 
             </div>
         </div>

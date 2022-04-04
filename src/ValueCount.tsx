@@ -12,8 +12,13 @@ export const ValueCount: FC<InputPropsType> = ({count, numberMax, numberMin}) =>
 
             <h1 className={count === numberMax ? "titleTitle" : ""}>
 
-                {numberMin > numberMax ? "error" : numberMin < 0 ?
-                    "value is not valid"  : count}
+                {
+                    numberMin > numberMax
+                        ? "error"
+                        : numberMin < 0
+                            ? "value is not valid"
+                            : count
+                }
 
             </h1>
         </div>
