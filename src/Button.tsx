@@ -4,7 +4,7 @@ import "./App.css";
 type ButtonTypeProps = {
     title: string
     callback: () => void
-    isDisabled: boolean
+    isDisabled?: boolean
 }
 
 export const Button: FC<ButtonTypeProps> = ({title, callback, isDisabled}) => {

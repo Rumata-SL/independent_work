@@ -1,9 +1,26 @@
-import React, {useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 import "./App.css";
 import {Table} from "./Table";
+import {Instaler} from "./Instaler";
 
 function App() {
-    const [count, setCount] = useState(0);
+
+    let [numberMax, setNumberMax] = useState("0")
+    let [numberMin, setNumberMin] = useState("0")
+    let [count, setCount] = useState(0);
+
+    console.log(numberMax)
+    console.log(numberMin)
+    const changeMaxValue = (e: string) => {
+        setNumberMax(e)
+    }
+    const changeMinValue = (e: string) => {
+        setNumberMin(e)
+    }
+
+    const instaler = ()=>{
+
+    }
 
     const inc = () => {
         //CurrentState=>NextState
@@ -14,8 +31,15 @@ function App() {
     }
     return (
         <div className="App">
-            <h2 className={"hhh"}>Independent work</h2>
+
+            {/*<h2 className={"hhh"}>Independent work</h2>*/}
             <Table count={count} inc={inc} reset={reset}/>
+            <Instaler
+                instaler={instaler}
+                changeMaxValue={changeMaxValue}
+                changeMinValue={changeMinValue}
+
+            />
 
         </div>
     );

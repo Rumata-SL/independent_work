@@ -10,6 +10,8 @@ type TablePropsType = {
 }
 
 export const Table: FC<TablePropsType> = ({count, inc, reset}) => {
+    let max = 0;
+    let min = 0;
     return (
         <div className={"table"}>
             <Input count={count}/>

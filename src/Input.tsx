@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import "./App.css";
 
 type InputPropsType = {
-    count: number
+    count?: number
 }
 export const Input: FC<InputPropsType> = ({count}) => {
     return (
