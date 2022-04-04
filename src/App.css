@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-top: 70px;
 
 }
 .hhh{
@@ -12,7 +13,7 @@
     text-shadow: 0 0 20px cyan;
 }
 .table {
-    margin-top: 50px;
+    margin: 50px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -29,14 +30,20 @@
     align-items: center;
     height: 100px;
     margin: 10px;
+    border: 2px solid cyan;
     border-radius: 5px;
-    background-color: cyan;
+    /*background-color: cyan;*/
+    color: cyan;
     text-align: center;
     font-size: 1.3em;
     font-weight: bold;
     padding: 10px;
 }
-
+.instal{
+    display: flex;
+    flex-direction: column;
+    color: cyan;
+}
 .containerBtn {
     border: 2px solid cyan;
     border-radius: 5px;
@@ -54,12 +61,13 @@
 }
 
 .btn:hover {
-    width: 110px;
-    height: 50px;
-    margin: 10px;
+    transform: scale(1.2);
+    /*width: 110px;*/
+    /*height: 50px;*/
+    /*margin: 10px;*/
     border-radius: 5px;
     border: 2px solid blue;
-    font-size: 1.3em;
+    /*font-size: 1.3em;*/
     background-color: cyan;
     box-shadow: 0 0 20px cyan;
 }

@@ -34,11 +34,24 @@ export const Instaler: FC<InstalerPropsType> = (
 
     return (
         <div className={"table"}>
-            {
+            <div className={`${"title"} ${"instal"} `}>
+                {
+                    numberMin > numberMax ? <h5 style={{color: "red"}}>error</h5> : null
+                }
+
+                <span > max value : <input
+                    onChange={onchangeMaxHandler}
+                    type="number"/>
+            </span>
+                <span > min value : <input
+                    onChange={onchangeMinHandler}
+                    type="number"/>
+            </span>
+            </div>
+           {/* {
                 numberMin > numberMax ? <h5 style={{color: "red"}}>error</h5> : null
             }
 
-            {/*<h5 style={{color:"red"}}>error</h5>*/}
             <span style={{color: "#fff"}}> max value <input
                 onChange={onchangeMaxHandler}
                 type="number"/>
@@ -46,7 +59,7 @@ export const Instaler: FC<InstalerPropsType> = (
             <span style={{color: "#fff"}}> min value <input
                 onChange={onchangeMinHandler}
                 type="number"/>
-            </span>
+            </span>*/}
             <div className={"containerBtn"}>
                 <Button title={"SET"} callback={instaler}/>
                 {/*<button onClick={instaler}>set</button>*/}

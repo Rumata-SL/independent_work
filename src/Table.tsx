@@ -10,15 +10,12 @@ type TablePropsType = {
 }
 
 export const Table: FC<TablePropsType> = ({count, inc, reset}) => {
-    let max = 0;
-    let min = 0;
     return (
         <div className={"table"}>
-
             <Input count={count}/>
             <div className={"containerBtn"}>
-                <Button title={"inc"} callback={inc} isDisabled={count === 5}/>
-                <Button title={"reset"} callback={reset} isDisabled={count === 0}/>
+                <Button title={"INC"} callback={inc} isDisabled={count === 5}/>
+                <Button title={"RESET"} callback={reset} isDisabled={count === 0}/>
             </div>
         </div>
     );
