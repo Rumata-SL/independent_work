@@ -1,5 +1,4 @@
-import React, {ChangeEvent, FC, useState} from "react";
-import {Input} from "./Input";
+import React, {ChangeEvent, FC} from "react";
 import {Button} from "./Button";
 import "./App.css";
 
@@ -13,13 +12,12 @@ type InstalerPropsType = {
 
 export const Instaler: FC<InstalerPropsType> = (
     {
-                    instaler,
-                    changeMaxValue,
-                    changeMinValue,
-                    numberMax,
-                    numberMin
-                                                }
-                                                ) => {
+        instaler,
+        changeMaxValue,
+        changeMinValue,
+        numberMax,
+        numberMin
+    }) => {
 
     function onchangeMaxHandler(e: ChangeEvent<HTMLInputElement>) {
         let counterMaxNumber = +e.currentTarget.value
@@ -34,35 +32,26 @@ export const Instaler: FC<InstalerPropsType> = (
 
     return (
         <div className={"table"}>
-            <div className={`${"title"} ${"instal"} `}>
-                {
-                    numberMin > numberMax ? <h5 style={{color: "red"}}>error</h5> : null
-                }
+            <div className={`${"title"} ${"titleInstal"} `}>
+                {/*{*/}
+                {/*    numberMin > numberMax ? <h5 style={{color: "red"}}>error</h5> : null*/}
+                {/*}*/}
 
-                <span > max value : <input
+                <span> max value : <input
+                    className={numberMax < 0 ? "errorInput" : ""}
                     onChange={onchangeMaxHandler}
                     type="number"/>
             </span>
-                <span > min value : <input
+                <span> min value : <input
+                    className={numberMin < 0 ? "errorInput" : ""}
                     onChange={onchangeMinHandler}
                     type="number"/>
             </span>
             </div>
-           {/* {
-                numberMin > numberMax ? <h5 style={{color: "red"}}>error</h5> : null
-            }
 
-            <span style={{color: "#fff"}}> max value <input
-                onChange={onchangeMaxHandler}
-                type="number"/>
-            </span>
-            <span style={{color: "#fff"}}> min value <input
-                onChange={onchangeMinHandler}
-                type="number"/>
-            </span>*/}
             <div className={"containerBtn"}>
-                <Button title={"SET"} callback={instaler}/>
-                {/*<button onClick={instaler}>set</button>*/}
+                <Button title={"SET"} callback={instaler} isDisabled={numberMin < 0 || numberMax < numberMin}/>
+
             </div>
         </div>
     )

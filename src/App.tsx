@@ -31,8 +31,11 @@ function App() {
     }
     return (
         <div className="App">
+            <div className={"one"}>
 
-            {/*<h2 className={"hhh"}>Independent work</h2>*/}
+            <h2 className={"hhh"}>Independent work</h2>
+            </div>
+            <div className={"two"}>
 
             <Instaler
                 instaler={instaler}
@@ -40,9 +43,10 @@ function App() {
                 changeMinValue={changeMinValue}
                 numberMax={numberMax}
                 numberMin={numberMin}
-
             />
-            <Table count={count} inc={inc} reset={reset}/>
+            <Table count={count} inc={inc} reset={reset} numberMax={numberMax}
+                   numberMin={numberMin}/>
+            </div>
 
         </div>
     );

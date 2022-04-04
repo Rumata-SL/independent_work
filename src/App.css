@@ -1,11 +1,17 @@
 .App {
     text-align: center;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.two{
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 70px;
-
 }
 .hhh{
     font-size: 2em;
@@ -39,7 +45,7 @@
     font-weight: bold;
     padding: 10px;
 }
-.instal{
+.titleInstal{
     display: flex;
     flex-direction: column;
     color: cyan;
@@ -74,6 +80,10 @@
 
 .titleTitle {
     color: red;
-    font-size: 4em;
+    font-size: 2em;
 
+}
+.errorInput{
+    background-color: crimson;
+    outline: 2px solid red;
 }
