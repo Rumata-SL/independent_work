@@ -5,13 +5,12 @@ import {Instaler} from "./Instaler";
 
 function App() {
 
-    let numberMinValue: number = JSON.parse(sessionStorage.getItem("minValue") || "0")
-    let numberMaxValue: number = JSON.parse(sessionStorage.getItem("maxValue") || "0")
+    const numberMinValue: number = JSON.parse(sessionStorage.getItem("minValue") || "0")
+    const numberMaxValue: number = JSON.parse(sessionStorage.getItem("maxValue") || "0")
 
-    let [numberMin, setNumberMin] = useState<number>(numberMinValue)
-    let [numberMax, setNumberMax] = useState<number>(numberMaxValue)
-
-    let [count, setCount] = useState<number>(numberMin);
+    const [numberMin, setNumberMin] = useState<number>(numberMinValue)
+    const [numberMax, setNumberMax] = useState<number>(numberMaxValue)
+    const [count, setCount] = useState<number>(numberMin);
 
     useEffect(() => {
         setCount(numberMinValue)
@@ -22,11 +21,11 @@ function App() {
         setNumberMax(numberMaxValue)
     }, [numberMinValue, numberMaxValue])
 
-    const changeMaxValue = (e: number) => {
-        setNumberMax(e)
-    }
-    const changeMinValue = (e: number) => {
+    const changeMinValue = (e:number) => {
         setNumberMin(e)
+    }
+    const changeMaxValue = (e:number) => {
+        setNumberMax(e)
     }
 
     const instaler = () => {
