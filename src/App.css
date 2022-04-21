@@ -67,12 +67,12 @@
 }
 
 .btn:hover {
-    transform: scale(1.2);
+    transform: scale(1.08);
     /*width: 110px;*/
     /*height: 50px;*/
     /*margin: 10px;*/
     border-radius: 5px;
-    border: 2px solid blue;
+    /*border: 2px solid blue;*/
     /*font-size: 1.3em;*/
     background-color: cyan;
     box-shadow: 0 0 20px cyan;

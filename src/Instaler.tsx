@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FC} from "react";
-import {Button} from "./Button";
+import {Button} from "./components/Button";
 import "./App.css";
 
 type InstalerPropsType = {
@@ -19,14 +19,13 @@ export const Instaler: FC<InstalerPropsType> = (
         numberMin
     }) => {
 
-    function onchangeMaxHandler(e: ChangeEvent<HTMLInputElement>) {
+    const onchangeMaxHandler=(e: ChangeEvent<HTMLInputElement>) =>{
         let counterMaxNumber = +e.currentTarget.value
         changeMaxValue(counterMaxNumber)
     }
 
-    function onchangeMinHandler(e: ChangeEvent<HTMLInputElement>) {
+    const onchangeMinHandler=(e: ChangeEvent<HTMLInputElement>)=> {
         let counterMinNumber = +e.currentTarget.value;
-        console.log(typeof counterMinNumber)
         changeMinValue(counterMinNumber)
     }
 
@@ -53,7 +52,9 @@ export const Instaler: FC<InstalerPropsType> = (
                 <Button
                     title={"SET"}
                     callback={instaler}
-                    isDisabled={numberMin < 0 || numberMax < numberMin || numberMax === numberMin }/>
+                    isDisabled={numberMin < 0 || numberMax < numberMin || numberMax === numberMin }
+
+                />
 
             </div>
         </div>
