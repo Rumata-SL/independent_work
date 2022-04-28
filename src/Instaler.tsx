@@ -39,12 +39,12 @@ export const Instaler: FC<InstalerPropsType> = (
                 <span> max value : <input
                     className={numberMax < 0 || numberMax === numberMin? "errorInput"  : ""}
                     onChange={onchangeMaxHandler}
-                    type="number"/>
+                    type="number" value={numberMax}/>
             </span>
                 <span> min value : <input
                     className={numberMin < 0  || numberMax === numberMin ? "errorInput" : ""}
                     onChange={onchangeMinHandler}
-                    type="number"/>
+                    type="number" value={numberMin}/>
             </span>
             </div>
 
